@@ -8,7 +8,6 @@ import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.Toolbar
 import android.view.View
 import io.realm.Realm
 import kotlinx.android.synthetic.main.activity_input.*
@@ -57,7 +56,6 @@ class InputActivity : AppCompatActivity() {
         setContentView(R.layout.activity_input)
 
         // ActionBar を設定する
-        val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
         if (supportActionBar != null) {
             supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 戻るボタンを有効にする
@@ -69,7 +67,6 @@ class InputActivity : AppCompatActivity() {
         doneButton.setOnClickListener(mDoneClickListener)
 
         // EXTRA_TASK から Task の id を取得して、 id から Task のインスタンスを取得する
-        val intent = intent
         val taskId = intent.getIntExtra(EXTRA_TASK, -1)
         val realm = Realm.getDefaultInstance()
         mTask = realm.where(Task::class.java).equalTo("id", taskId).findFirst()

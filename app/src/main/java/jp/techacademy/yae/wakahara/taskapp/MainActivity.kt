@@ -73,8 +73,6 @@ class MainActivity : AppCompatActivity() {
 
                 val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
                 alarmManager.cancel(resultPendingIntent)
-
-                reloadListView()
             }
             builder.setNegativeButton("キャンセル", null)
 

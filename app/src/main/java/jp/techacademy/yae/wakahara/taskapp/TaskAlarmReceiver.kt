@@ -51,7 +51,7 @@ class TaskAlarmReceiver : BroadcastReceiver() {
         builder.setContentIntent(pendingIntent)
 
         // 通知を表示する
-        notificationManager.notify(task!!.id, builder.build())
+        notificationManager.notify(task.id, builder.build())
 
         realm.close()
     }
