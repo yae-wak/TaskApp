@@ -6,8 +6,8 @@ import android.app.PendingIntent
 import android.app.TimePickerDialog
 import android.content.Context
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.view.View
 import io.realm.Realm
 import kotlinx.android.synthetic.main.activity_input.*
@@ -126,7 +126,7 @@ class InputActivity : AppCompatActivity() {
         mTask!!.date = calendar.time
 
         // Realm に登録
-        realm.copyToRealmOrUpdate(mTask)
+        realm.copyToRealmOrUpdate(mTask!!)
         realm.commitTransaction()
 
         realm.close()
